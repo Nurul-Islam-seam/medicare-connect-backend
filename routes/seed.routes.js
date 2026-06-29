@@ -24,7 +24,7 @@ router.post('/seed', async (req, res) => {
 
     // Admin User
     const adminPassword = await bcryptjs.hash('Admin@123', 10);
-    const admin = await User.create({
+    const [admin] = await User.insertMany([{
       name: 'Clinical Hub Admin',
       email: 'admin@medicare.com',
       password: adminPassword,
@@ -33,7 +33,7 @@ router.post('/seed', async (req, res) => {
       photo: 'https://i.pravatar.cc/150?img=12',
       role: 'admin',
       status: 'active'
-    });
+    }]);
     console.log('✅ Admin:', admin.email);
 
     // Patients
