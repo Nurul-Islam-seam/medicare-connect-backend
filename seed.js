@@ -280,7 +280,7 @@ async function seedDatabase() {
         appointmentTime: '03:00 PM',
         symptoms: 'Fever and cough for 3 days',
         appointmentStatus: 'pending',
-        paymentStatus: 'pending'
+        paymentStatus: 'unpaid'
       },
       {
         patientId: patients[0]._id,
@@ -298,7 +298,7 @@ async function seedDatabase() {
         appointmentTime: '11:00 AM',
         symptoms: 'Skin rash on arms',
         appointmentStatus: 'rejected',
-        paymentStatus: 'pending'
+        paymentStatus: 'unpaid'
       },
       {
         patientId: patients[2]._id,
