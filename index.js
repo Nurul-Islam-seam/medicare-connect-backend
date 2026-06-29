@@ -102,10 +102,10 @@ app.use((err, req, res, next) => {
 // ========================
 const startServer = async () => {
     try {
-        if (process.env.MONGO_URI) {
+        if (process.env.MONGODB_URI || process.env.MONGO_URI) {
             await connectDB();
         } else {
-            console.warn('⚠️  MONGO_URI is not set. Database features will not work.');
+            console.warn('⚠️  MONGODB_URI is not set. Database features will not work.');
         }
 
         app.listen(port, () => {
