@@ -12,6 +12,7 @@ const reviewRoutes = require('./routes/review.routes');
 const paymentRoutes = require('./routes/payment.routes');
 const prescriptionRoutes = require('./routes/prescription.routes');
 const adminRoutes = require('./routes/admin.routes');
+const seedRoutes = require('./routes/seed.routes');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -58,6 +59,7 @@ app.get('/', (req, res) => {
             payments: '/api/payments',
             prescriptions: '/api/prescriptions',
             admin: '/api/admin',
+            seed: 'POST /api/seed (Initialize database with test data)',
         },
     });
 });
@@ -70,6 +72,7 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/prescriptions', prescriptionRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api', seedRoutes);
 
 // ========================
 // 404 HANDLER
