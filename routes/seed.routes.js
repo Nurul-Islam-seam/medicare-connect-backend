@@ -29,7 +29,7 @@ router.post('/seed', async (req, res) => {
       email: 'admin@medicare.com',
       password: adminPassword,
       phone: '+1-800-MEDICARE',
-      gender: 'Male',
+      gender: 'male',
       photo: 'https://i.pravatar.cc/150?img=12',
       role: 'admin',
       status: 'active'
@@ -44,7 +44,7 @@ router.post('/seed', async (req, res) => {
         email: 'sarah@patient.com',
         password: patientPassword,
         phone: '+1-555-0101',
-        gender: 'Female',
+        gender: 'female',
         photo: 'https://i.pravatar.cc/150?img=1',
         role: 'patient',
         status: 'active'
@@ -54,7 +54,7 @@ router.post('/seed', async (req, res) => {
         email: 'michael@patient.com',
         password: patientPassword,
         phone: '+1-555-0102',
-        gender: 'Male',
+        gender: 'male',
         photo: 'https://i.pravatar.cc/150?img=2',
         role: 'patient',
         status: 'active'
@@ -64,7 +64,7 @@ router.post('/seed', async (req, res) => {
         email: 'emma@patient.com',
         password: patientPassword,
         phone: '+1-555-0103',
-        gender: 'Female',
+        gender: 'female',
         photo: 'https://i.pravatar.cc/150?img=3',
         role: 'patient',
         status: 'active'
@@ -80,7 +80,7 @@ router.post('/seed', async (req, res) => {
         email: 'amanda@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1001',
-        gender: 'Female',
+        gender: 'female',
         photo: 'https://i.pravatar.cc/150?img=5',
         role: 'doctor',
         status: 'active'
@@ -90,7 +90,7 @@ router.post('/seed', async (req, res) => {
         email: 'james@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1002',
-        gender: 'Male',
+        gender: 'male',
         photo: 'https://i.pravatar.cc/150?img=6',
         role: 'doctor',
         status: 'active'
@@ -100,7 +100,7 @@ router.post('/seed', async (req, res) => {
         email: 'sophia@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1003',
-        gender: 'Female',
+        gender: 'female',
         photo: 'https://i.pravatar.cc/150?img=7',
         role: 'doctor',
         status: 'active'
@@ -110,7 +110,7 @@ router.post('/seed', async (req, res) => {
         email: 'robert@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1004',
-        gender: 'Male',
+        gender: 'male',
         photo: 'https://i.pravatar.cc/150?img=8',
         role: 'doctor',
         status: 'active'
@@ -120,7 +120,7 @@ router.post('/seed', async (req, res) => {
         email: 'eleanor@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1005',
-        gender: 'Female',
+        gender: 'female',
         photo: 'https://i.pravatar.cc/150?img=9',
         role: 'doctor',
         status: 'active'
@@ -130,7 +130,7 @@ router.post('/seed', async (req, res) => {
         email: 'rajyan@doctor.com',
         password: doctorPassword,
         phone: '+1-555-1006',
-        gender: 'Male',
+        gender: 'male',
         photo: 'https://i.pravatar.cc/150?img=10',
         role: 'doctor',
         status: 'active'
