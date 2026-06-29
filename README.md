@@ -1,57 +1,64 @@
-# MediCare Connect - Backend Server
+# MediCare Connect - Backend API
 
-The backend server for the MediCare Connect hospital appointment & healthcare management system.
+## Overview
+The backend service for MediCare Connect, a comprehensive healthcare management system. This RESTful API powers the client application by handling secure authentication, database operations, and core business logic for patients, doctors, and appointments.
 
-## Technologies Used
-- Node.js & Express.js
-- MongoDB & Mongoose
-- JSON Web Tokens (JWT) for authentication
-- bcryptjs for password hashing
-- Stripe for payment processing
-- CORS & Dotenv
+## Key Features
+- **Role-Based Access Control (RBAC):** Strict authorization middleware securing endpoints for Admins, Doctors, and Patients.
+- **Secure Authentication:** JWT token generation and bcrypt password hashing.
+- **Advanced Querying:** Pagination, sorting, and filtering for doctor search APIs.
+- **Data Integrity:** Mongoose schemas with strict validation, pre-save hooks, and custom error handling.
+- **Automated Seeding:** Built-in seed scripts for rapid environment setup and dummy data generation.
 
-## Prerequisites
-- Node.js (v18+)
-- MongoDB Atlas Cluster or Local MongoDB
-- Stripe Account (for payments)
-
-## Environment Variables
-Create a `.env` file in the root of the server directory with the following variables:
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
-CLIENT_URL=http://localhost:3000
-```
+## Technology Stack
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB (Atlas Cloud)
+- **ODM:** Mongoose
+- **Security:** bcryptjs, jsonwebtoken, cors, dotenv
 
 ## Installation & Setup
-1. Clone the repository and navigate to the server folder:
+
+1. **Clone the repository**
    ```bash
-   cd server
+   git clone https://github.com/Nurul-Islam-seam/medicare-connect-backend.git
+   cd medicare-connect-backend
    ```
-2. Install dependencies:
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
-3. Start the development server:
+
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory:
+   ```env
+   PORT=10000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   ```
+
+4. **Seed the Database (Optional)**
+   To populate the database with dummy data for testing:
+   ```bash
+   npm run seed
+   ```
+
+5. **Start the server**
    ```bash
    npm run dev
    ```
-4. The server will run on `http://localhost:5000`.
+   The API will be available at `http://localhost:10000`.
 
-## API Endpoints Overview
-- **Auth**: `/api/auth/register`, `/api/auth/login`, `/api/auth/google`, `/api/auth/me`
-- **Users**: `/api/users/my/profile`
-- **Doctors**: `/api/doctors` (public list), `/api/doctors/:id`
-- **Appointments**: `/api/appointments`, `/api/appointments/my`, `/api/appointments/cancel/:id`, `/api/appointments/reschedule/:id`
-- **Payments**: `/api/payment/create-payment-intent`, `/api/payment/confirm`, `/api/payments/my`
-- **Reviews**: `/api/reviews`, `/api/reviews/my`
-- **Admin**: `/api/admin/stats`, `/api/admin/users`, `/api/admin/doctors`, `/api/admin/appointments`, `/api/admin/analytics`
+## API Documentation
+Core endpoints include:
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Authenticate user and receive JWT
+- `GET /api/doctors` - Retrieve paginated and filtered doctor lists
+- `POST /api/appointments` - Book a new appointment (Protected)
 
-## Features Included
-- **JWT & Role-based Access Control**: Different access levels for Patient, Doctor, and Admin.
-- **Secure Password Hashing**: Encrypted with bcryptjs.
-- **Data Validation & Sanitization**: Comprehensive Mongoose schemas.
-- **Global Error Handling**: Standardized error responses across all routes.
-- **Advanced Querying**: Search, filter, and pagination support.
+## Deployment
+Configured for deployment on **Render** (Web Service). Uses standard Node.js build commands (`npm install` and `node index.js`).
+
+## License
+MIT License. See `LICENSE` for more information.
